@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+}
+
+button {
+    display: none;
+    cursor: pointer;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: lightgoldenrodyellow;
+    font-size: large;
+}
+
+
+
+.cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    transition: 2000ms;
+}
+
+
+.cell img {
+    width: 25px;
+    height: auto;
+}
+
+.floor {
+    background-color: gray;
+}
+
+.wall {
+    background-image: url(../img/wall.jpg);
+}

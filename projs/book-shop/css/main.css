@@ -1,0 +1,244 @@
+body.rtl {
+    direction: rtl;
+}
+
+
+body {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(231, 248, 251);
+    padding:0;
+}
+header{
+    width:100%;
+    background-color: #b0d7db;
+    padding-bottom: 1em;
+}
+.lang-menu {
+    align-self: end;
+    margin: 0 1em;
+}
+h1{
+    text-align: center;
+
+}
+h1 img {
+    height: 2em;
+}
+
+.txt-filter {
+    display: block;
+    margin: 0 auto 1em;
+
+}
+
+.book-filter {
+    margin-bottom: 1em;
+}
+
+
+button {
+    background-color: rgb(255, 255, 255);
+    margin: 0.2em;
+    cursor: pointer;
+    border-radius: 0.2em;
+    border: solid 0px rgb(24, 23, 90);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.374);
+}
+
+
+table {
+    margin: 20px auto;
+    /* border-collapse: collapse; */
+}
+
+td,
+th {
+    border: 0.5px solid rgb(0, 0, 0) !important;
+    padding: 2px 8px;
+    background-color: white;
+}
+
+th {
+    background-color: rgb(195, 208, 255);
+}
+
+th:not(.actions-header):hover {
+    cursor: pointer;
+    background-color: rgb(195, 228, 255);
+}
+
+td button,
+.book-box button {
+    background-color: rgb(201, 226, 247);
+    margin: 1px 2px;
+}
+td button:hover, .book-box button:hover {
+    background-color: rgb(158, 208, 203);
+}
+
+
+td img {
+    height: 2em;
+}
+
+.book-box img {
+    width: 15vw;
+}
+
+.book-box {
+    padding: 0.5em 1em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 3px 0px rgba(20, 20, 20, 0.3);
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.book-data {
+    flex-basis: 40%;
+    margin: 0 1em;
+}
+
+.action-btns {
+    flex-basis: 30%;
+    text-align: center;
+}
+
+
+.modal1 {
+    background-color: rgb(37, 37, 37);
+    box-sizing: border-box;
+    padding: 10px 10px 30px;
+    position: fixed;
+    top: 0px;
+    right: -300px;
+    height: fit-content;
+    width: 300px;
+    text-align: center;
+    color: ghostwhite;
+    z-index: 20;
+}
+
+
+.modal1.open {
+    right: 15px;
+    top: 15px;
+    transition: right .5s;
+}
+
+.modal1 h3 {
+    color: pink;
+    text-decoration: overline;
+    text-transform: capitalize;
+}
+
+.modal1 h4 .to-render {
+    color: pink;
+}
+
+.modal1 img {
+    height: 12em;
+}
+
+.modal1 button {
+border-radius: 0.2em;
+margin:5px 2px 2px;
+}
+
+.btn-toolbar {
+    margin: auto;
+}
+
+.first-btn {
+    border-start-start-radius: 10px !important;
+    border-end-start-radius: 10px !important;
+}
+
+.last-btn {
+    border-start-end-radius: 10px !important;
+    border-end-end-radius: 10px !important;
+}
+
+.modal-background{
+    position: fixed;
+    /* Positioning and size */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(148, 186, 188, 0.507);
+    /* color */
+    display: none;
+    z-index: 10;
+}
+
+.offcanvas-aside {
+    position: fixed;
+    height: 20%;
+    background: #fed136;
+    width: 100%;
+    right: 0vw;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.offcanvas-aside p {
+    text-align: center;
+}
+
+.offcanvas-aside .offcanvas-content-suffix {
+    height: 20%;
+}
+
+.add-book-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.add-book-modal, .update-price-modal {
+    --bs-modal-zindex: 1055;
+    --bs-modal-width: 500px;
+    --bs-modal-padding: 1rem;
+    --bs-modal-margin: 0.5rem;
+    --bs-modal-xcolor: ;
+    --bs-modal-bg: #fff;
+    --bs-modal-border-color: var(--bs-border-color-translucent);
+    --bs-modal-border-width: 1px;
+    --bs-modal-border-radius: 0.5rem;
+    --bs-modal-inner-border-radius: calc(0.5rem - 1px);
+    --bs-modal-header-padding-x: 1rem;
+    --bs-modal-header-padding-y: 1rem;
+    --bs-modal-header-padding: 1rem 1rem;
+    --bs-modal-header-border-color: var(--bs-border-color);
+    --bs-modal-header-border-width: 1px;
+    --bs-modal-title-line-height: 1.5;
+    --bs-modal-footer-gap: 0.5rem;
+    --bs-modal-footer-bg: ;
+    --bs-modal-footer-border-color: var(--bs-border-color);
+    --bs-modal-footer-border-width: 1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    z-index: 20;
+    box-shadow: 2,2,2,2,black;
+}
+
+.field-name {
+    font-weight: bold;
+    cursor: pointer;
+}

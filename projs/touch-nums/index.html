@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Touch the Numbers</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="initGame()">
+    <h1>Touch the Numbers</h1>
+    <table class="upper" border="1" cellpadding="10">
+        <tr><td class="level" colspan="3">Chose your Level!<br/> <button class="chosen" data-size="4"  onclick="changeSize(4)">Easy</button> <button class="unchosen" data-size="5" onclick="changeSize(5)">Medium</button> <button class="unchosen" data-size="6" onclick="changeSize(6)">Hard</button></td></tr>
+        <tr><td class="time">Game Time:<br><span></span></td><td class="gameover"><button>New<br/>Game!</button></td><td class="next">Next Number:<br><span></span></td></tr>
+    </table>
+    <h2 class="highscore4"></h2>
+    <h2 class="highscore5"></h2>
+    <h2 class="highscore6"></h2>
+    <table border="1" cellpadding="10">
+        <tbody class="board"></tbody>
+    </table>
+    
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

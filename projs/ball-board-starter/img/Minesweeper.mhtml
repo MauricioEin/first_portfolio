@@ -1,0 +1,71 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://127.0.0.1:5500/index.html
+Subject: Minesweeper
+Date: Wed, 21 Sep 2022 11:39:07 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--LH464MvnMEz1Py7s4DJJiyQGTEfLAoSHAz7BaeWB3l----"
+
+
+------MultipartBoundary--LH464MvnMEz1Py7s4DJJiyQGTEfLAoSHAz7BaeWB3l----
+Content-Type: text/html
+Content-ID: <frame-0EE43053AD45899843D5A30FE8266250@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://127.0.0.1:5500/index.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8">
+   =20
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Minesweeper</title>
+   =20
+<link rel=3D"stylesheet" href=3D"http://127.0.0.1:5500/css/main.css?_cacheO=
+verride=3D1663759966555"></head>
+
+<body>
+    <h1>Minesweeper</h1>
+    <table class=3D"upper" border=3D"1" cellpadding=3D"10">
+        <tbody><tr>
+            <td class=3D"level" colspan=3D"3">
+                Chose your Level!<br><span><button class=3D"chosen">beginne=
+r</button><button class=3D"unchosen">medium</button><button class=3D"unchos=
+en">expert</button></span>
+           =20
+            </td>
+        </tr>
+        <tr><td class=3D"time">Game Time:<br><span>0</span></td><td class=
+=3D"gameover"><button>New<br>Game!</button></td><td class=3D"next">Next Num=
+ber:<br><span></span></td></tr>
+    </tbody></table>
+    <div class=3D"game">
+        <table>
+            <tbody class=3D"board"><tr><td class=3D"">-</td><td class=3D"">=
+-</td><td class=3D"">-</td><td class=3D"">-</td></tr><tr><td class=3D"">-</=
+td><td class=3D"">-</td><td class=3D"mine">-</td><td class=3D"">-</td></tr>=
+<tr><td class=3D"">-</td><td class=3D"">-</td><td class=3D"">-</td><td clas=
+s=3D"">-</td></tr><tr><td class=3D"mine">-</td><td class=3D"">-</td><td cla=
+ss=3D"">-</td><td class=3D"">-</td></tr></tbody> </table>
+    </div>
+   =20
+   =20
+<!-- Code injected by live-server -->
+
+
+
+</body></html>
+------MultipartBoundary--LH464MvnMEz1Py7s4DJJiyQGTEfLAoSHAz7BaeWB3l----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://127.0.0.1:5500/css/main.css?_cacheOverride=1663759966555
+
+@charset "utf-8";
+
+table { margin: auto; border: 1px solid black; }
+
+.board td { border: 1px solid black; padding: 10px; cursor: default; }
+
+.flag { background-color: pink; }
+------MultipartBoundary--LH464MvnMEz1Py7s4DJJiyQGTEfLAoSHAz7BaeWB3l------

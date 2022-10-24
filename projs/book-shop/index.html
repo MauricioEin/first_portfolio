@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+
+    <title>Book Shop Manager</title>
+</head>
+
+<body onload="onInit()">
+<header>
+    <p class="lang-menu"><a href="index.html?lang=en">English</a> <a href="index.html?lang=es">Español</a> <a
+            href="index.html?lang=he">עברית</a></p>
+    <h1><img src="img/books-icon.png" /> <span data-trans="title">Book Shop Manager</span></h1>
+</header>
+<hr />
+    <section class="book-filter">
+        <!-- <h3>Filter</h3> -->
+        <label>
+            <input type="text" class="txt-filter" data-trans="txt-filter-placeholder"
+                oninput="onSetFilterBy({type:'txt', value:this.value})" placeholder="🔎 Search by name" />
+
+            <label for="maxPrice-filter" data-trans="max-price-label">
+                Maximum Price:</label>
+            <input id="maxPrice-filter" type="range" min="0" max="250" value="250" class="maxPrice-filter"
+                onchange="this.title=this.value;onSetFilterBy({type:'maxPrice', value: this.value})" />
+            <br>
+
+            <label for="minRate-filter" data-trans="min-rate-label">
+                Minimum Rate: </label>
+            <input id="minRate-filter" type="range" min="0" max="10" value="0" class="minRate-filter"
+                onchange="this.title=this.value;onSetFilterBy({type: 'minRate', value: this.value})" />
+    </section>
+
+
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2 view" role="group" aria-label="First group">
+            <button type="button" class="btn btn-primary first-btn to-table-btn" data-trans="table-view-btn"
+                onclick="onChangeMode('table')">Table</button>
+            <button type="button" class="btn btn-primary last-btn to-cards-btn" data-trans="cards-view-btn"
+                onclick="onChangeMode('cards')">Cards</button>
+        </div>
+        <div class="btn-group me-2" role="group" aria-label="Second group">
+            <button type="button" class="btn btn-warning first-btn last-btn add-book-btn" data-trans="add-book-btn">Add
+                a Book</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button type="button" class="btn btn-info first-btn prev-page" data-trans="prev-page-btn"
+                onclick="onChangePage(-1)">Previous Page</button>
+            <button type="button" class="btn btn-info last-btn next-page" data-trans="next-page-btn"
+                onclick="onChangePage(1)">Next Page</button>
+        </div>
+    </div>
+
+
+    <table>
+        <thead>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="cards-container"></div>
+    <div class="modal-background"></div>
+    <div class="modal1">
+        <h3></h3>
+        <h4 class="id"><span data-trans="modal-id">Book Id</span>: <span class="to-render"></span></h4>
+        <h4 class="price"><span data-trans="datafield-price">Price</span>: <span class="to-render"></span></h4>
+        <img /> <br />
+        <div class="rate"></div>
+        <button data-trans="close-modal-btn" onclick="onCloseModal()">Close</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="add-book-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" data-trans="add-book-btn">New Book</h5>
+                    <button type="button" class="close close-add-book" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="book-name" class="col-form-label"><span data-trans="datafield-name">
+                                    Name</span>:</label>
+                            <input type="text" class="form-control" id="book-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="book-price" class="col-form-label"><span data-trans="datafield-price">
+                                    Price</span>:</label>
+                            <input type="text" class="form-control" id="book-price">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-add-book"
+                            data-trans="cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary save-book-btn" data-trans="save">Save</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="update-price-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-trans="update-book-price">Update Price</h5>
+                    <button type="button" class="close close-update-price" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="new-price" class="col-form-label" data-trans="new-price">New Price:</label>
+                            <input type="text" class="form-control" id="new-price">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-update-price"
+                            data-trans="cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary save-update-btn" data-trans="save">Save</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.js"></script>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/i18n.service.js"></script>
+    <script src="js/services/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+
+</body>
+
+</html>
